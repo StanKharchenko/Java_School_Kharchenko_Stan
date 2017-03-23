@@ -8,11 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="lesson1javaintroduction" />
         <module name="lesson2" />
+        <module name="lesson3" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="lesson1javaintroduction" target="1.5" />
       <module name="lesson2" target="1.7" />
+      <module name="lesson3" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
