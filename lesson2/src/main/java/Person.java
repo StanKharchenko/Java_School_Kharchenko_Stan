@@ -1,3 +1,6 @@
+/**
+ * Created by 12 on 23.03.2017.
+ */
 public class Person {
     private final boolean man;
     private final String name;
