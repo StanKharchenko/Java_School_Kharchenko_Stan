@@ -5,19 +5,41 @@ import java.util.*;
  */
 public class Lesson4 {
     public static void main(String[] args) {
-        String words = "one one two two three three three";
-        Map<String, Integer> map = new HashMap<String, Integer>();
-        for (String word: words.split(" ")) {
-            if(map.containsKey(word)){
-                map.put(word, map.get(word) + 1);
-            }else{
-                map.put(word, 1);
+        String text = "я оглянулся посмотреть не оглянулась ли она чтоб посмотреть не оглянулся ли я";
+        Map<String, Integer> wordsmap = new HashMap<String, Integer>();
+        for (String word:text.split(" ")) {
+            if(wordsmap.containsKey(word)){
+                wordsmap.put(word, wordsmap.get(word) + 1);
+            }else
+           {
+                wordsmap.put(word,1);
             }
         }
-
-
-
+//        System.out.println(wordsmap.get("три"));
+        ArrayList<Map.Entry<String,Integer>> result = new ArrayList();
+        Set<Map.Entry<String,Integer>> set = wordsmap.entrySet();
+        Iterator<Map.Entry<String,Integer>> set_itr = set.iterator();
+        while (set_itr.hasNext()) {
+            Map.Entry<String, Integer> entryInSet = set_itr.next();
+            if((result.size() == 0)) {
+                result.add(entryInSet);
+            }else {
+                for (Map.Entry<String, Integer> entryInList : result) {
+                    if (entryInSet.getValue() >= entryInList.getValue()) {
+                        result.add(result.indexOf(entryInList), entryInSet);
+                        break;
+                    }
+                }
+            }
+            if(!result.contains(entryInSet))
+                result.add(entryInSet);
+        }
+        System.out.println("Готово");
+        for (Map.Entry<String, Integer> entry : result) {
+            System.out.println(entry.getKey() + ":" + entry.getValue());
+        }
     }
+
 
 
 }
