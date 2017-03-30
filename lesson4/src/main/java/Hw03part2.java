@@ -3,7 +3,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class Hw03part2 {
-    static final String FILE_PATH = "C:\\Temp\\1.txt";
+    static final String FILE_PATH = "C://Temp//1.txt";
     static boolean isFirst = true;
 
     public static void main(String[] args) throws IOException {
