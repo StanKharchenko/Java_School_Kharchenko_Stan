@@ -1,6 +1,4 @@
-package test;
-
-import sun.plugin.javascript.navig.AnchorArray;
+package CW;
 
 import java.util.*;
 
