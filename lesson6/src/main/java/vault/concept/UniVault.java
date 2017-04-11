@@ -15,6 +15,6 @@ public interface UniVault<K,V> {
 
     Map<K,V> getAllByKeys(Collection<K> keys);
 
-    Collection<? extends V> getAllByPredicate(Predicate<? super V> p);
+    Collection<V> getAllByPredicate(Predicate<? super V> p);
 
 }

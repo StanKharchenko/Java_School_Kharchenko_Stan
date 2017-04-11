@@ -7,6 +7,8 @@ import vault.developers.javadevelopers.JavaDeveloper;
 import vault.implement.HashMapVault;
 import vault.implement.HighIqPredicate;
 
+import java.util.Collection;
+
 /**
  * Created by 12 on 06.04.2017.
  */
