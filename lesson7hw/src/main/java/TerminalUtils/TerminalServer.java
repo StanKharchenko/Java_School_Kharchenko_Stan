@@ -26,14 +26,15 @@ public class TerminalServer {
             if (wrongPinTry == 5) {
                 wrongPinTry = 0;
                 block = true;
+                waitForUnblock();
             }
-            waitForUnblock();
+
         }
         return false;
     }
 
     private void waitForUnblock() throws InterruptedException {
-        TimeUnit.SECONDS.sleep(5);
+        TimeUnit.SECONDS.sleep(15);
         block = false;
     }
 
