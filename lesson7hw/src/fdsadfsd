@@ -1,0 +1,227 @@
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+/**
+* Created by sbt-harchenko-ss on 17.04.2017.
+*/
+public class Main {
+    public static void main(String[] args) {
+
+        Person john = new Person("John",30,"SBT");
+        Person mike = new Person("Mike",18,"Sberbank");
+        Person sigizmund = new Person("Sigizmund",92,"Russian Post");
+
+        Pet bobik = new Pet("Бобик",2, sigizmund);
+        WrongPet sharik = new WrongPet("Шарик","20", sigizmund);
+
+        run(john, mike);
+        run(bobik, mike);
+        run(sharik, mike);
+    }
+
+    public static void run(Object o1, Object o2) {
+        System.out.println("Исходные данные:");
+        System.out.println(o1.toString());
+        System.out.println(o2.toString());
+        BeanUtils.assign(o1, o2);
+        System.out.println("Результат:");
+        System.out.println(o1.toString());
+        System.out.println(o2.toString());
+        System.out.println("===================");
+
+    }
+}
+
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.Objects;
+
+/**
+ * Created by sbt-harchenko-ss on 17.04.2017.
+ */
+public class BeanUtils {
+    /**
+     * Scans object "from" for all getters. If object "to"
+     * contains correspondent setter, it will invoke it
+     * to set property value for "to" which equals to the property
+     * of "from".
+     * <p/>
+     * The type in setter should be compatible to the value returned
+     * by getter (if not, no invocation performed).
+     * Compatible means that parameter type in setter should
+     * be the same or be superclass of the return type of the getter.
+     * <p/>
+     * The method takes care only about public methods.
+     *
+     * @param to   Object which properties will be set.
+     * @param from Object which properties will be used to get values.
+     */
+    public static void assign(Object to, Object from) {
+        for (Method fromMethod:from.getClass().getMethods()) {          // перебираем методы объекта "from"
+            if (fromMethod.getName().startsWith("get")) {               // если нашли геттер, ищем для него сеттер в объекте "to"
+                for (Method toMethod : to.getClass().getMethods()) {    // перебираем методы объекта "to"
+                    if (toMethod.getName().startsWith("set") &&         // если нашли сеттер, проверяем:
+                            toMethod.getName().substring(3).equals(fromMethod.getName().substring(3)) &&    // сверяем названия методов
+                            toMethod.getParameterTypes()[0].equals(fromMethod.getReturnType())){           // сверяем типы возвращаемых и передаваемых параметров
+                        try {
+                            toMethod.invoke(to, (fromMethod.invoke(from,null)));        // вызываем сеттер объекта "to" и записываем в него то, что возвращает геттер объекта "from"
+                            break;
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        } catch (InvocationTargetException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/**
+ * Created by sbt-harchenko-ss on 17.04.2017.
+ */
+public class Person {
+    private String name;
+    private Integer age;
+    private String organization;
+
+    public Person(String name, Integer age, String organization) {
+        this.name = name;
+        this.age = age;
+        this.organization = organization;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getOrganization() {
+        return organization;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setOrganization(String organization) {
+        this.organization = organization;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", organization='" + organization + '\'' +
+                '}';
+    }
+}
+
+
+/**
+ * Created by sbt-harchenko-ss on 18.04.2017.
+ */
+public class Pet {
+    private String name;
+    private Integer age;
+    private Person owner;
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public Person getOwner() {
+        return owner;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public void setOwner(Person owner) {
+        this.owner = owner;
+    }
+
+    public Pet(String name, Integer age, Person owner) {
+        this.name = name;
+        this.age = age;
+        this.owner = owner;
+    }
+    @Override
+    public String toString() {
+        return "Pet{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", owner=" + owner +
+                '}';
+    }
+}
+
+
+/**
+ * Created by sbt-harchenko-ss on 18.04.2017.
+ */
+public class WrongPet {
+    private String name;
+    private String age;
+    private Person owner;
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public Person getOwner() {
+        return owner;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public void setOwner(Person owner) {
+        this.owner = owner;
+    }
+
+    public WrongPet(String name, String age, Person owner) {
+        this.name = name;
+        this.age = age;
+        this.owner = owner;
+    }
+    @Override
+    public String toString() {
+        return "Pet{" +
+                "name='" + name + '\'' +
+                ", age='" + age + '\'' +
+                ", owner=" + owner +
+                '}';
+    }
+}
