@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="lesson10lambdas" />
         <module name="lesson1javaintroduction" />
         <module name="lesson2" />
         <module name="lesson3" />
@@ -17,9 +18,11 @@
         <module name="lesson7hw" />
         <module name="lesson8" />
         <module name="lesson8hw" />
+        <module name="lesson9" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="lesson10lambdas" target="1.8" />
       <module name="lesson1javaintroduction" target="1.5" />
       <module name="lesson2" target="1.7" />
       <module name="lesson3" target="1.5" />
@@ -30,7 +33,8 @@
       <module name="lesson7" target="1.5" />
       <module name="lesson7hw" target="1.5" />
       <module name="lesson8" target="1.5" />
-      <module name="lesson8hw" target="1.8" />
+      <module name="lesson8hw" target="1.5" />
+      <module name="lesson9" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
