@@ -54,6 +54,8 @@
         <option value="$PROJECT_DIR$/lesson9/pom.xml" />
         <option value="$PROJECT_DIR$/lesson10lambdas/pom.xml" />
         <option value="$PROJECT_DIR$/lesson11serialization/pom.xml" />
+        <option value="$PROJECT_DIR$/javaConcurent/pom.xml" />
+        <option value="$PROJECT_DIR$/sockets/pom.xml" />
       </list>
     </option>
   </component>

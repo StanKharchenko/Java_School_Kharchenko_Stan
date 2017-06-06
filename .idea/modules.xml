@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Java_School_Kharchenko_Stan.iml" filepath="$PROJECT_DIR$/Java_School_Kharchenko_Stan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaConcurent/javaConcurent.iml" filepath="$PROJECT_DIR$/javaConcurent/javaConcurent.iml" />
       <module fileurl="file://$PROJECT_DIR$/lesson10lambdas/lesson10lambdas.iml" filepath="$PROJECT_DIR$/lesson10lambdas/lesson10lambdas.iml" />
       <module fileurl="file://$PROJECT_DIR$/lesson12serialization/lesson12serialization.iml" filepath="$PROJECT_DIR$/lesson12serialization/lesson12serialization.iml" />
       <module fileurl="file://$PROJECT_DIR$/lesson1javaintroduction/lesson1javaintroduction.iml" filepath="$PROJECT_DIR$/lesson1javaintroduction/lesson1javaintroduction.iml" />
@@ -17,6 +18,7 @@
       <module fileurl="file://$PROJECT_DIR$/lesson8/lesson8.iml" filepath="$PROJECT_DIR$/lesson8/lesson8.iml" />
       <module fileurl="file://$PROJECT_DIR$/lesson8hw/lesson8hw.iml" filepath="$PROJECT_DIR$/lesson8hw/lesson8hw.iml" />
       <module fileurl="file://$PROJECT_DIR$/lesson9/lesson9.iml" filepath="$PROJECT_DIR$/lesson9/lesson9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sockets/sockets.iml" filepath="$PROJECT_DIR$/sockets/sockets.iml" />
     </modules>
   </component>
 </project>
