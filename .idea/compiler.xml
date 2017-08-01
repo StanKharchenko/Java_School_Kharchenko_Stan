@@ -6,6 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="beerSong" />
+        <module name="chatbotNew" />
         <module name="javaConcurent" />
         <module name="lesson10lambdas" />
         <module name="lesson11serialization" />
@@ -25,6 +27,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="beerSong" target="1.5" />
+      <module name="chatbotNew" target="1.7" />
       <module name="javaConcurent" target="1.5" />
       <module name="lesson10lambdas" target="1.5" />
       <module name="lesson1javaintroduction" target="1.5" />
@@ -38,7 +42,7 @@
       <module name="lesson8" target="1.5" />
       <module name="lesson8hw" target="1.5" />
       <module name="lesson9" target="1.5" />
-      <module name="sockets" target="1.8" />
+      <module name="sockets" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

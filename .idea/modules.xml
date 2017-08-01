@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Java_School_Kharchenko_Stan.iml" filepath="$PROJECT_DIR$/Java_School_Kharchenko_Stan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beerSong/beerSong.iml" filepath="$PROJECT_DIR$/beerSong/beerSong.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chatbotNew/chatbotNew.iml" filepath="$PROJECT_DIR$/chatbotNew/chatbotNew.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaConcurent/javaConcurent.iml" filepath="$PROJECT_DIR$/javaConcurent/javaConcurent.iml" />
       <module fileurl="file://$PROJECT_DIR$/lesson10lambdas/lesson10lambdas.iml" filepath="$PROJECT_DIR$/lesson10lambdas/lesson10lambdas.iml" />
       <module fileurl="file://$PROJECT_DIR$/lesson12serialization/lesson12serialization.iml" filepath="$PROJECT_DIR$/lesson12serialization/lesson12serialization.iml" />
